@@ -36,7 +36,8 @@ def send_confirmation(request,
         
         if bad_addresses:
             return render_to_response(template_name,
-                                      {"bad_addresses": bad_addresses},
+                                      {"bad_addresses": bad_addresses,
+                                       "success_url": success_url},
                                       context_instance=RequestContext(request))
         else:
             return HttpResponseRedirect(success_url)
