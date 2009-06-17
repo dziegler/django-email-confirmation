@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Email confirmation attempts exceeded</title>
+    </head>
+    <body>
+        <p>
+            You have exceeded the maximum number of email confirmation attempts
+            for the following email addresses:
+        </p>
+        <ul>
+        {% for email_address in bad_addresses %}
+            <li>{{email_address.email}}</li>
+        {% endfor %}
+        </ul>
+        <p>Please select a different email address.</p>
+    </body>
+</html>
